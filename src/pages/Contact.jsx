@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ContexApi } from "../components/context";
 import { CgMail } from "react-icons/cg";
 import { IoLocationOutline } from "react-icons/io5";
