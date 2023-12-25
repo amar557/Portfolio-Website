@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+li {
+  text-transform: capitalize;
+}
+.active {
+  background-color: #e6e7e7;
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+
+/* .skill-discription-blackmode {
+  background-color: rgba(255, 255, 255, 0.349);
+  padding: 5px 0;
+  transform: translateY(5rem);
+  overflow: hidden;
+  opacity: 0;
+
+  color: black;
+
+  position: absolute;
+  bottom: 0%;
+  transition: all 400ms linear;
+  text-align: center;
+  left: 0%;
+  font-size: smaller;
+}
+.skill-discription-lightmode {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.709) 50%,
+    rgba(0, 0, 0, 0.175)
+  );
+  padding: 5px 0;
+  transform: translateY(5rem);
+  overflow: hidden;
+  opacity: 0;
+
+  color: white;
+  position: absolute;
+  bottom: 0%;
+  transition: all 400ms linear;
+  text-align: center;
+  left: 0%;
+  font-size: smaller;
+}
+.skill-group:hover .skill-discription-blackmode,
+.skill-group:hover .skill-discription-lightmode {
+  opacity: 1;
+  transform: translateY(0rem);
+}
+.heading-blackmode {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.709) 50%,
+    rgba(0, 0, 0, 0.175)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  transform: translateY(-2.5rem);
+  width: 100%;
+  transition: all 400ms linear;
+  padding: 3px 0;
+  color: #adadaf;
+}
+.heading-lightmode {
+  color: black;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.349);
+  top: 0;
+  left: 0;
+  text-align: center;
+  transform: translateY(-2.5rem);
+  width: 100%;
+  transition: all 400ms linear;
+  padding: 3px 0;
+}
+.skill-group:hover .heading-blackmode,
+.skill-group:hover .heading-lightmode {
+  transform: translateY(0);
+} */
