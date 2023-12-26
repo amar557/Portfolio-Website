@@ -51,11 +51,11 @@ function Navbar() {
   document.addEventListener("scroll", Anonymist);
   return (
     <div
-      className={` ${
+      className={` z-50 flex items-center justify-between py-1 transition-all  lg:justify-center lg:py-5 ${
         stickey
           ? "fixed z-50 w-full bg-[#d9d9d9e8] shadow-lg"
           : "relative w-full bg-transparent"
-      }   flex items-center justify-between py-1 transition-all  lg:justify-center lg:py-5 `}
+      }   `}
     >
       <Logo />
       <LinkList isOpen={isOpen} />
