@@ -54,8 +54,8 @@ function Navbar() {
       className={` ${
         stickey
           ? "fixed z-50 w-full bg-[#d9d9d9e8] shadow-lg"
-          : "relative bg-transparent"
-      }  font-roboto  z-50 flex items-center justify-between py-1 transition-all  lg:justify-center lg:py-5 `}
+          : "relative w-full bg-transparent"
+      }   flex items-center justify-between py-1 transition-all  lg:justify-center lg:py-5 `}
     >
       <Logo />
       <LinkList isOpen={isOpen} />
@@ -75,7 +75,7 @@ function LinkList({ isOpen }) {
   return (
     <>
       <ul
-        className={`absolute right-0 top-0 flex h-screen w-1/2 bg-[#f6f6f7] bg-gradient-to-r py-20 font-semibold lg:py-3    ${
+        className={`absolute right-0 top-0 flex h-screen w-1/2 bg-[#f6f6f7]  py-20 font-semibold lg:py-3    ${
           isOpen ? "hidden" : "block"
         } w-1/2 flex-col gap-y-5  text-center text-black transition-all lg:static lg:flex lg:h-fit  lg:flex-row lg:items-center lg:justify-center lg:space-x-7 lg:rounded-full lg:px-3 `}
       >
@@ -130,7 +130,7 @@ const ThemeChangerButton = memo(function () {
   return (
     <>
       <button
-        className="absolute right-[10%] top-2/4 -translate-y-2/4 justify-end  text-xl transition-all lg:right-[10%]"
+        className="absolute right-[20%] top-2/4 -translate-y-2/4   text-xl transition-all lg:right-[10%]"
         onClick={HandleTheme}
       >
         {Isdark ? (
