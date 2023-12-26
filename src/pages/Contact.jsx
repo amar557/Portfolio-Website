@@ -16,6 +16,7 @@ const contactData = [
   {
     icon: <IoLocationOutline />,
     data: "RehmanAbad metro station ,Rawalpindi",
+    width: "70%",
   },
 ];
 
@@ -51,21 +52,28 @@ function InfoSection() {
       className={`mx-auto flex   flex-wrap justify-center gap-x-5  gap-y-10  `}
     >
       {contactData.map((data, i) => (
-        <ContactInfo key={i} icon={data.icon} data={data.data} />
+        <ContactInfo
+          key={i}
+          icon={data.icon}
+          data={data.data}
+          width={data.width}
+        />
       ))}
     </div>
   );
 }
-function ContactInfo({ icon, data }) {
+function ContactInfo({ icon, data, width }) {
   const { Isdark } = useContext(ContexApi);
   return (
     <div
       className={` space-x-5 rounded ${
         Isdark ? "bg-white" : "bg-black"
-      } flex w-[50%] shrink grow basis-auto items-center px-12 py-3 text-lg`}
+      } flex w-full shrink grow-0 basis-auto items-center justify-center px-12 py-3 text-lg md:w-[48%] lg:w-[48%] ${
+        width ? `xl:w-[${width}]` : "w-[40%]"
+      }`}
     >
-      <span className="text-2xl">{icon}</span>
-      <span className="">{data}</span>
+      <span className="shrink text-[16px] lg:text-3xl">{icon}</span>
+      <span className="shrink text-[12px] lg:text-lg">{data}</span>
     </div>
   );
 }

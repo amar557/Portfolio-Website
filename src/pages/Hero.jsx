@@ -55,7 +55,7 @@ function IntroSection({ Isdark }) {
       className="space-y-5"
     >
       <div className="text-4xl font-bold capitalize  ">
-        <span>i'M </span>
+        <span className="text-2xl">i'M </span>
         <span className={` ${Isdark ? "text-[#2f3e46]" : "text-[#ffc86b]"}`}>
           amar ali
         </span>
