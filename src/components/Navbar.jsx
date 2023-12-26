@@ -130,7 +130,7 @@ const ThemeChangerButton = memo(function () {
   return (
     <>
       <button
-        className="absolute right-[50%] top-2/4 -translate-y-2/4 justify-end  text-xl transition-all lg:right-[10%]"
+        className="absolute right-[10%] top-2/4 -translate-y-2/4 justify-end  text-xl transition-all lg:right-[10%]"
         onClick={HandleTheme}
       >
         {Isdark ? (
