@@ -15,7 +15,7 @@ const contactData = [
   },
   {
     icon: <IoLocationOutline />,
-    data: "RehmanAbad metro station ,Rawalpindi",
+    data: "RehmanAbad metro station, Rawalpindi",
     width: "70%",
   },
 ];
@@ -34,9 +34,9 @@ function Contact() {
 }
 function Heading() {
   return (
-    <div className="flex w-full items-center justify-center py-8 text-center">
+    <div className="mx-auto flex items-center justify-center py-8 text-center md:w-10/12">
       <Line />
-      <span className="w-10/12 px-3 text-2xl font-bold capitalize lg:w-1/2">
+      <span className="px-3 text-xl font-bold capitalize  md:w-10/12 md:text-2xl lg:w-1/2">
         contact us
       </span>
       <Line />
@@ -44,7 +44,7 @@ function Heading() {
   );
 }
 function Line() {
-  return <div className="h-1 w-full rounded bg-yellow-600"></div>;
+  return <div className="h-1 w-1/4 rounded bg-yellow-600 md:w-full"></div>;
 }
 function InfoSection() {
   return (
@@ -69,7 +69,7 @@ function ContactInfo({ icon, data, width }) {
       className={` space-x-5 rounded ${
         Isdark ? "bg-white" : "bg-black"
       } flex w-full shrink grow-0 basis-auto items-center justify-center px-12 py-3 text-lg md:w-[48%] lg:w-[48%] ${
-        width ? `xl:w-[${width}]` : "w-[40%]"
+        width ? `xl:w-[${width}]` : "xl:w-[40%]"
       }`}
     >
       <span className="shrink text-[16px] lg:text-3xl">{icon}</span>
