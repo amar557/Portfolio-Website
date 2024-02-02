@@ -36,7 +36,7 @@ function Heading() {
   return (
     <div className="mx-auto flex items-center justify-center py-8 text-center md:w-10/12">
       <Line />
-      <span className="px-3 text-xl font-bold capitalize  md:w-10/12 md:text-2xl lg:w-1/2">
+      <span className="px-3  text-xl  font-bold capitalize  md:w-10/12 md:text-2xl lg:w-1/2">
         contact us
       </span>
       <Line />

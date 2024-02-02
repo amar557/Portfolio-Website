@@ -52,7 +52,7 @@ function IntroSection({ Isdark }) {
       initial={{ opacity: 0, translateX: -80 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ delay: 0.25, duration: 0.75 }}
-      className="space-y-5"
+      className="space-y-5 text-center sm:text-start "
     >
       <div className="text-4xl font-bold capitalize  ">
         <span className="text-2xl">i'M </span>
@@ -84,7 +84,7 @@ function HeroPicture() {
 function HeroButton({ Isdark }) {
   return (
     <button
-      className={`rounded-lg border-4 ${
+      className={` rounded-lg border-2  md:border-4 ${
         Isdark
           ? "border-[#2f3e46] text-[#2f3e46]  hover:border-[#384d58cc] hover:text-[#384d58cc]"
           : "border-[#ffc86b] text-[#ffc86b] hover:border-[#f3c16ac3] hover:text-[#f3c16ac3]"
