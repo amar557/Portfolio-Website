@@ -1,7 +1,9 @@
 import pigGamePic from "../pictures/pigGame.png";
 import EcommercePic from "../pictures/Category Dropdown.jpg";
 import guessMyNumber from "../pictures/guessMyNumber.png";
+import payremit from "../pictures/payremitapp.png";
 import Heading from "../components/Heading";
+
 import "aos/dist/aos.css";
 import Aos from "aos";
 import { useEffect } from "react";
@@ -17,6 +19,10 @@ const projectsData = [
   {
     img: guessMyNumber,
     to: "https://github.com/amar557/GuessMyNumber-Game",
+  },
+  {
+    img: payremit,
+    to: "https://banking-app-omega-three.vercel.app/",
   },
 ];
 

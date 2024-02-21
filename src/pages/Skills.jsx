@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ContexApi } from "../components/context";
 import reactLogo from "../pictures/reactLogo.png";
 import HTMLLogo from "../pictures/HTML-Logo.png";
@@ -66,7 +66,7 @@ function Skills() {
   );
 }
 
-function SkillContainer({ image, heading, Isdark, discription }) {
+function SkillContainer({ image, heading, Isdark }) {
   return (
     <div
       className={`flex w-[70%] shrink-0 grow-0 basis-auto flex-col items-center justify-center gap-y-7 overflow-hidden rounded-lg p-0 py-12 transition-all duration-300 ease-linear hover:skew-x-3 hover:cursor-pointer sm:w-[40%] md:w-[30%] lg:w-[25%] xl:w-[21%] xl:shrink ${
@@ -79,4 +79,5 @@ function SkillContainer({ image, heading, Isdark, discription }) {
     </div>
   );
 }
+
 export default Skills;
