@@ -3,7 +3,6 @@ import { ContexApi } from "../components/context";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { FaGithub, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import Animation from "./Animation";
 import heroPicture from "../pictures/portfoliopic.png";
 const iconsData = [
   {
@@ -32,11 +31,11 @@ function Hero() {
   const { Isdark } = useContext(ContexApi);
 
   return (
-    <div className={`relative  h-max  sm:h-[33rem]  `} id="hero">
+    <div className={`relative  h-max  sm:h-[33rem] pt-20 sm:pt-0 `} id="hero">
       <div
         className={`
          ${Isdark ? "text-secondary" : "text-[#adadaf]"}  mx-auto
-         flex h-max w-3/4 flex-col-reverse items-center justify-between gap-y-8 sm:flex-row  sm:py-40 sm:pt-20 md:w-2/3`}
+         flex h-max w-5/6 sm:w-3/4  items-center justify-between gap-y-8 flex-col  sm:py-40 sm:pt-12 md:w-2/3`}
       >
         <IntroSection Isdark={Isdark} />
         <HeroPicture />
@@ -52,15 +51,16 @@ function IntroSection({ Isdark }) {
       initial={{ opacity: 0, translateX: -80 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ delay: 0.25, duration: 0.75 }}
-      className="space-y-5 text-center sm:text-start "
+      className=" space-y-3 md:space-y-5 text-center  mb-12 font-Montserrat "
     >
-      <div className="text-4xl font-bold capitalize  ">
-        <span className="text-2xl">i'M </span>
-        <span className={` ${Isdark ? "text-[#2f3e46]" : "text-[#ffc86b]"}`}>
-          amar ali
+      <div className="text-4xl font-bold capitalize tracking-wide relative ">
+        <span className={` ${Isdark ? "text-[#2f3e46]" : "text-[#ffc86b]"}  `}>
+          i'M amar ali,
         </span>
       </div>
-      <div className=" text-lg font-bold capitalize ">front End developer</div>
+      <div className="text-xl sm:text-4xl font-medium  tracking-wider capitalize  ">
+        front End developer
+      </div>
 
       <HeroButton Isdark={Isdark} />
     </motion.div>
@@ -73,10 +73,9 @@ function HeroPicture() {
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.25, duration: 0.75 }}
-      className="relative"
+      className="relative mt-8 sm:mt-0"
     >
-      <img src={heroPicture} alt="pic " className="w-56 self-center " />
-      <Animation />
+      <img src={heroPicture} alt="pic " className="w-80 self-center -mt-32" />
     </motion.div>
   );
 }
@@ -84,9 +83,9 @@ function HeroPicture() {
 function HeroButton({ Isdark }) {
   return (
     <button
-      className={` rounded-lg border-2  md:border-4 ${
+      className={` rounded-lg  absolute bottom-14 right-[37%]  sm:right-[46%] z-30 ${
         Isdark
-          ? "border-[#3c484e] text-[#3c484e]  hover:border-[#384d58ef] hover:text-[#384d58ef]"
+          ? "text-[#3c484e] bg-white  hover:border-[#384d58ef] hover:text-[#384d58ef]"
           : "border-[#ffc86b] text-[#ffc86b] hover:border-[#f3c16ac3] hover:text-[#f3c16ac3]"
       }  px-4 py-2 font-bold capitalize transition-all duration-300  `}
     >

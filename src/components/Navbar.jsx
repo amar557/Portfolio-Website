@@ -111,12 +111,14 @@ function NavLinks({ to, link, offset }) {
 }
 
 const NavButton = memo(function NavButton({ handleNavbar, isOpen }) {
+  const { Isdark } = useContext(ContexApi);
+
   return (
     <button
       onClick={handleNavbar}
       className={`z-10 ${
-        isOpen ? "text-white" : "text-black"
-      } p-2 text-2xl  lg:hidden`}
+        Isdark ? "text-black" : "text-[#ffc86b]"
+      } p-2 text-2xl   lg:hidden`}
     >
       {isOpen ? (
         <FontAwesomeIcon icon={faBars} />
