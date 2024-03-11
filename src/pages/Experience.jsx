@@ -33,7 +33,7 @@ const experinceData = [
 
 function Experience() {
   return (
-    <div id="experience" className="mx-auto mt-20 w-2/3 ">
+    <div id="experience" className="mx-auto mt-20 w-11/12 ">
       <Heading>experience</Heading>
       <VerticalTimeline>
         {experinceData.map((data, i) => (

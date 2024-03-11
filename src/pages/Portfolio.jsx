@@ -32,7 +32,7 @@ function Portfolio() {
   }, []);
   return (
     <div
-      className="mx-auto  h-max  w-3/4 py-10 text-center md:w-2/3"
+      className="mx-auto  h-max  w-3/4 py-10 text-center md:w-5/6 lg:w-2/3"
       id="portfolio"
       data-aos="fade-up-right"
     >

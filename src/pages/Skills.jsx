@@ -49,9 +49,9 @@ const skillData = [
 function Skills() {
   const { Isdark } = useContext(ContexApi);
   return (
-    <div className="mx-auto  w-3/4 py-10 md:w-2/3" id="skills">
+    <div className="mx-auto  w-11/12 py-10 md:w-2/3" id="skills">
       <Heading>skills</Heading>
-      <div className="flex flex-wrap justify-center gap-x-3 gap-y-6  ">
+      <div className="flex flex-wrap justify-center gap-x-3 gap-y-6 xl:gap-x-10  ">
         {skillData.map((data, i) => (
           <SkillContainer
             image={data.img}
@@ -69,7 +69,7 @@ function Skills() {
 function SkillContainer({ image, heading, Isdark }) {
   return (
     <div
-      className={`flex w-[70%] shrink-0 grow-0 basis-auto flex-col items-center justify-center gap-y-7 overflow-hidden rounded-lg p-0 py-12 transition-all duration-300 ease-linear hover:skew-x-3 hover:cursor-pointer sm:w-[40%] md:w-[30%] lg:w-[25%] xl:w-[21%] xl:shrink ${
+      className={`flex w-[70%] shrink-0 grow-0 basis-auto flex-col items-center justify-center gap-y-7 overflow-hidden rounded-lg p-0 py-12 transition-all duration-300 ease-linear hover:skew-x-3 hover:cursor-pointer sm:w-[40%] md:w-[30%] lg:w-[25%] xl:w-[22%]  xl:shrink ${
         Isdark ? "bg-white text-black" : "bg-black text-white"
       } `}
       data-aos="fade-right"

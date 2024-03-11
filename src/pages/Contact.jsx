@@ -24,7 +24,7 @@ function Contact() {
   return (
     <div
       id="contactus"
-      className="mx-auto w-3/4 py-16 pt-32 md:w-2/3 "
+      className="mx-auto w-5/6 py-16 pt-32 md:w-2/3 "
       data-aos="zoom-in"
     >
       <Heading />

@@ -60,7 +60,7 @@ function Navbar() {
       <Logo />
       <LinkList isOpen={isOpen} />
       <ThemeChangerButton />
-      <NavButton handleNavbar={handleNavbar} isOpen={isOpen} />
+      <NavButton isOpen={isOpen} handleNavbar={handleNavbar} />
     </div>
   );
 }
@@ -75,9 +75,9 @@ function LinkList({ isOpen }) {
   return (
     <>
       <ul
-        className={`absolute right-0 top-0 flex h-screen w-1/2 bg-[#f6f6f7]  py-20 font-semibold lg:py-3    ${
-          isOpen ? "hidden" : "block"
-        } w-1/2 flex-col gap-y-5  text-center text-black transition-all lg:static lg:flex lg:h-fit  lg:flex-row lg:items-center lg:justify-center lg:space-x-7 lg:rounded-full lg:px-3 `}
+        className={`absolute right-0 top-[72px] flex h-screen w-1/2 bg-[#f6f6f7]  py-20 font-semibold lg:py-3    ${
+          isOpen ? "-left-full" : "left-0"
+        } w-1/2 flex-col gap-y-5  text-center text-black transition-all duration-300 lg:static lg:flex lg:h-fit  lg:flex-row lg:items-center lg:justify-center lg:space-x-7 lg:rounded-full lg:px-3 `}
       >
         {LinksData.map((data, i) => (
           <NavLinks
@@ -93,6 +93,7 @@ function LinkList({ isOpen }) {
 }
 
 function NavLinks({ to, link, offset }) {
+  const { handleNavbar } = useContext(ContexApi);
   return (
     <li className="hover:cursor-pointer">
       <Link
@@ -101,6 +102,7 @@ function NavLinks({ to, link, offset }) {
         spy={true}
         offset={offset}
         duration={500}
+        onClick={handleNavbar}
       >
         {link}
       </Link>

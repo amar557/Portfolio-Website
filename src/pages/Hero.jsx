@@ -86,9 +86,9 @@ function HeroButton({ Isdark }) {
     <button
       className={` rounded-lg border-2  md:border-4 ${
         Isdark
-          ? "border-[#2f3e46] text-[#2f3e46]  hover:border-[#384d58cc] hover:text-[#384d58cc]"
+          ? "border-[#3c484e] text-[#3c484e]  hover:border-[#384d58ef] hover:text-[#384d58ef]"
           : "border-[#ffc86b] text-[#ffc86b] hover:border-[#f3c16ac3] hover:text-[#f3c16ac3]"
-      }  px-4 py-2 font-bold transition-all duration-300  `}
+      }  px-4 py-2 font-bold capitalize transition-all duration-300  `}
     >
       <Link
         to="contactus"
