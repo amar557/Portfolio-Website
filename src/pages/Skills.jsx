@@ -49,7 +49,7 @@ const skillData = [
 function Skills() {
   const { Isdark } = useContext(ContexApi);
   return (
-    <div className="mx-auto  w-11/12 py-10 md:w-2/3" id="skills">
+    <div className="mx-auto  w-11/12 pb-10 mt-14 md:w-2/3" id="skills">
       <Heading>skills</Heading>
       <div className="flex flex-wrap justify-center gap-x-3 gap-y-6 xl:gap-x-10  ">
         {skillData.map((data, i) => (

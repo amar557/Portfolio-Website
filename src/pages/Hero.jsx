@@ -4,6 +4,8 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { FaGithub, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import heroPicture from "../pictures/portfoliopic.png";
+import pic from "../pictures/AmarAli.png";
+import { Typewriter } from "react-simple-typewriter";
 const iconsData = [
   {
     icon: <FaGithub className="text-2xl" />,
@@ -59,7 +61,14 @@ function IntroSection({ Isdark }) {
         </span>
       </div>
       <div className="text-xl sm:text-4xl font-medium  tracking-wider capitalize  ">
-        front End developer
+        <Typewriter
+          cursor
+          autostart={true}
+          cursorStyle="|"
+          words={["Frontend Developer", "React Js developer"]}
+          typeSpeed={120}
+          deleteSpeed={90}
+        />
       </div>
 
       <HeroButton Isdark={Isdark} />
@@ -75,7 +84,7 @@ function HeroPicture() {
       transition={{ delay: 0.25, duration: 0.75 }}
       className="relative mt-8 sm:mt-0"
     >
-      <img src={heroPicture} alt="pic " className="w-80 self-center -mt-32" />
+      <img src={pic} alt="pic " className="w-[26rem] self-center -mt-[150px]" />
     </motion.div>
   );
 }

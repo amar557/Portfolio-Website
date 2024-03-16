@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 function About() {
   return (
     <div
-      className="mx-auto h-max w-5/6 py-10 md:w-2/3"
+      className="mx-auto h-max w-5/6 py-10 md:w-2/3 sm:pt-20"
       id="about"
       data-aos="fade-left"
     >

@@ -14,7 +14,7 @@ const LinksData = [
   {
     link: "about",
     to: "about",
-    offset: -150,
+    offset: -100,
   },
   {
     link: "skill",
@@ -29,7 +29,7 @@ const LinksData = [
   {
     link: "Experience",
     to: "experience",
-    offset: -230,
+    offset: -150,
   },
   {
     link: "contact ",
