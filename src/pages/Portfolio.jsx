@@ -1,8 +1,9 @@
 import pigGamePic from "../pictures/pigGame.png";
-import EcommercePic from "../pictures/Category Dropdown.jpg";
+import EcommercePic from "../pictures/commerce.png";
 import guessMyNumber from "../pictures/guessMyNumber.png";
-import payremit from "../pictures/payremitapp.png";
+import payremit from "../pictures/bank.png";
 import Heading from "../components/Heading";
+import traveler from "../pictures/traveler.png";
 
 import "aos/dist/aos.css";
 import Aos from "aos";
@@ -23,6 +24,10 @@ const projectsData = [
   {
     img: payremit,
     to: "https://banking-app-omega-three.vercel.app/",
+  },
+  {
+    img: traveler,
+    to: "https://traveler-app-nine.vercel.app/",
   },
 ];
 

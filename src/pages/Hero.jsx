@@ -3,7 +3,6 @@ import { ContexApi } from "../components/context";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { FaGithub, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import heroPicture from "../pictures/portfoliopic.png";
 import pic from "../pictures/AmarAli.png";
 import { Typewriter } from "react-simple-typewriter";
 const iconsData = [
