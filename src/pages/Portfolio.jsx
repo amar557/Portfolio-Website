@@ -15,7 +15,7 @@ const projectsData = [
   },
   {
     img: EcommercePic,
-    to: "https://github.com/amar557/AppleStore",
+    to: "https://hope-not-out.vercel.app/",
   },
   {
     img: guessMyNumber,
