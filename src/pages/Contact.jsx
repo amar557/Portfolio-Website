@@ -4,6 +4,7 @@ import { CgMail } from "react-icons/cg";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
 import "aos/dist/aos.css";
+
 const contactData = [
   {
     icon: <CgMail />,

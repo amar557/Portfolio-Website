@@ -10,20 +10,20 @@ import Aos from "aos";
 import { useEffect } from "react";
 const projectsData = [
   {
-    img: pigGamePic,
-    to: "https://github.com/amar557/PigGame",
-  },
-  {
     img: EcommercePic,
     to: "https://hope-not-out.vercel.app/",
   },
   {
-    img: guessMyNumber,
-    to: "https://github.com/amar557/GuessMyNumber-Game",
-  },
-  {
     img: payremit,
     to: "https://banking-app-omega-three.vercel.app/",
+  },
+  {
+    img: pigGamePic,
+    to: "https://pig-game-zeta-nine.vercel.app/",
+  },
+  {
+    img: guessMyNumber,
+    to: "https://guess-my-number-game-seven-plum.vercel.app/",
   },
   {
     img: traveler,
