@@ -76,7 +76,6 @@ function Exclusive({ heading, details, icon }) {
         <h3 className="vertical-timeline-element-title font-roboto text-xl font-bold capitalize ">
           {heading}
         </h3>
-        {/* <h4 className="vertical-timeline-element-subtitle">{heading}</h4> */}
         <p>{details}</p>
       </VerticalTimelineElement>
     </>

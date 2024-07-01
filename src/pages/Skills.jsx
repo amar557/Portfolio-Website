@@ -5,6 +5,9 @@ import HTMLLogo from "../pictures/HTML-Logo.png";
 import CSSLogo from "../pictures/CSS-Logo.png";
 import javaScriptLogo from "../pictures/JAVASCRIPT-Logo.png";
 import TailwindLogo from "../pictures/TailwindCss.png";
+import NodeJsLogo from "../pictures/Node-logo.png";
+import ExpressJsLogo from "../pictures/express-logo.png";
+import MongoLogo from "../pictures/mongo-logo.png";
 import GitLogo from "../pictures/git.png";
 import Heading from "../components/Heading";
 import "aos/dist/aos.css";
@@ -45,6 +48,24 @@ const skillData = [
     discription:
       " Proficient in the complete spectrum of Git commands, navigate repositories with finesse",
   },
+  {
+    img: NodeJsLogo,
+    heading: "node js",
+    discription:
+      " Proficient in the complete spectrum of Git commands, navigate repositories with finesse",
+  },
+  {
+    img: ExpressJsLogo,
+    heading: "express js",
+    discription:
+      " Proficient in the complete spectrum of Git commands, navigate repositories with finesse",
+  },
+  {
+    img: MongoLogo,
+    heading: "mongo DB",
+    discription:
+      " Proficient in the complete spectrum of Git commands, navigate repositories with finesse",
+  },
 ];
 function Skills() {
   const { Isdark } = useContext(ContexApi);
@@ -69,7 +90,7 @@ function Skills() {
 function SkillContainer({ image, heading, Isdark }) {
   return (
     <div
-      className={`flex w-[70%] shrink-0 grow-0 basis-auto flex-col items-center justify-center gap-y-7 overflow-hidden rounded-lg p-0 py-12 transition-all duration-300 ease-linear hover:skew-x-3 hover:cursor-pointer sm:w-[40%] md:w-[30%] lg:w-[25%] xl:w-[22%]  xl:shrink ${
+      className={`flex w-[70%] shrink-0 grow-0 basis-auto flex-col items-center justify-center gap-y-7 overflow-hidden rounded-lg p-0 py-12 transition-all duration-300 ease-linear hover:skew-x-3 hover:cursor-pointer sm:w-[40%] md:w-[30%] lg:w-[25%] xl:w-[21%]  xl:shrink ${
         Isdark ? "bg-white text-black" : "bg-black text-white"
       } `}
       data-aos="fade-right"

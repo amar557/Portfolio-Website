@@ -16,7 +16,7 @@ const contactData = [
   },
   {
     icon: <IoLocationOutline />,
-    data: "RehmanAbad metro station, Rawalpindi",
+    data: " Rawalpindi, Pakistan",
     width: "70%",
   },
 ];

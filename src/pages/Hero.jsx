@@ -64,7 +64,11 @@ function IntroSection({ Isdark }) {
           cursor
           autostart={true}
           cursorStyle="|"
-          words={["Frontend Developer", "React Js developer"]}
+          words={[
+            "Mern stack Developer",
+            "React Js developer",
+            "node js developer",
+          ]}
           typeSpeed={120}
           deleteSpeed={90}
         />
