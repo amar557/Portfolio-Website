@@ -17,11 +17,11 @@ function About() {
 function Details() {
   return (
     <p className="relative font-roboto text-sm font-medium  leading-8 sm:text-lg">
-      Highly motivated Junior Front End Developer. Skilled in HTML, CSS,
-      JavaScript, Tailwind CSS, and React.js. I am a proactive problem-solver
-      Dedicated to delivering high-quality & my career goal is to gain
-      experience and develop a Solid foundation in software development. Looking
-      for an Front End Development internship .
+      Highly motivated Junior Mern Stack Developer. Skilled in HTML, CSS,
+      JavaScript, Tailwind CSS, React.js, Node.js, Express.js and Mongo DB. I am
+      a proactive problem-solver Dedicated to delivering high-quality & my
+      career goal is to gain experience and develop a Solid foundation in
+      software development.
     </p>
   );
 }

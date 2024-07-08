@@ -4,11 +4,16 @@ import guessMyNumber from "../pictures/guessMyNumber.png";
 import payremit from "../pictures/bank.png";
 import Heading from "../components/Heading";
 import traveler from "../pictures/traveler.png";
+import realState from "../pictures/real-estate.png";
 
 import "aos/dist/aos.css";
 import Aos from "aos";
 import { useEffect } from "react";
 const projectsData = [
+  {
+    img: realState,
+    to: "https://real-state-olive.vercel.app/",
+  },
   {
     img: EcommercePic,
     to: "https://hope-not-out.vercel.app/",
