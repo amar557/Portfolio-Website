@@ -93,7 +93,7 @@ function Hero() {
       <SocialLinks Isdark={Isdark} />
       
       {/* Scroll Indicator */}
-      <ScrollIndicator Isdark={Isdark} />
+      {/* <ScrollIndicator Isdark={Isdark} /> */}
     </div>
   );
 }

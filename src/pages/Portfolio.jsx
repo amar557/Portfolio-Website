@@ -14,7 +14,7 @@ import {
   SiReact, 
   SiJavascript, 
   SiTailwindcss, 
-  // SiNodeJs,
+  SiNodedotjs,
   SiMongodb,
   SiExpress
 } from "react-icons/si";
@@ -52,7 +52,7 @@ const projectsData = [
     to: "https://real-state-olive.vercel.app/",
     github: "#",
     category: "Full Stack",
-    tech: [<SiReact />, <SiTailwindcss />],
+    tech: [<SiReact />, <SiTailwindcss />,<SiNodedotjs/>],
     featured: true,
     year: "2024"
   },
@@ -75,8 +75,8 @@ const projectsData = [
     img: payremit,
     to: "https://banking-app-omega-three.vercel.app/",
     github: "#",
-    category: "Full Stack",
-    tech: [<SiReact />, <SiMongodb />],
+    category: "React Js",
+    tech: [<SiReact />],
     featured: false,
     year: "2023"
   },
