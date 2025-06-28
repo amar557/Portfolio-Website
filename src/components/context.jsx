@@ -4,6 +4,7 @@ const ContexApi = createContext();
 function AppData({ children }) {
   const [Isdark, setIsDark] = useState(true);
   const [isOpen, setIsOpen] = useState(true);
+  console.log(Isdark,'yes it is')
   function handleNavbar() {
     setIsOpen(!isOpen);
   }
@@ -15,7 +16,7 @@ function AppData({ children }) {
   }
   return (
     <ContexApi.Provider
-      value={{ Isdark, HandleTheme, changeTheme, isOpen, handleNavbar }}
+      value={{ Isdark, HandleTheme, changeTheme, isOpen, handleNavbar ,test:'kasjdf'}}
     >
       {children}
     </ContexApi.Provider>

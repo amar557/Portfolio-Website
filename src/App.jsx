@@ -1,26 +1,33 @@
-import Hero from "./pages/Hero";
+// App.jsx
+import React, { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";          // 🆕 see next section
+import Loader from "./components/Loader";          // optional spinner
 
-import Navbar from "./components/Navbar";
-import { useContext } from "react";
-import { ContexApi } from "./components/context";
-import About from "./pages/About";
-import Skills from "./pages/Skills";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
-import Experience from "./pages/Experience";
+// Lazy‑loaded pages
+const Hero       = lazy(() => import("./pages/Hero"));
+const About      = lazy(() => import("./pages/About"));
+const Skills     = lazy(() => import("./pages/Skills"));
+const Portfolio  = lazy(() => import("./pages/Portfolio"));
+const Experience = lazy(() => import("./pages/Experience"));
+const Contact    = lazy(() => import("./pages/Contact"));
 
 function App() {
-  const { changeTheme } = useContext(ContexApi);
   return (
-    <div className={`${changeTheme} font-Montserrat`}>
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Portfolio />
-      <Experience />
-      <Contact />
-    </div>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index         element={<Hero />} />
+          <Route path="about"  element={<About />} />
+          <Route path="skills" element={<Skills />} />
+          <Route path="work"   element={<Portfolio />} />
+          <Route path="xp"     element={<Experience />} />
+          <Route path="contact"element={<Contact />} />
+          {/* 404 fallback */}
+          <Route path="*" element={<Hero />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 
