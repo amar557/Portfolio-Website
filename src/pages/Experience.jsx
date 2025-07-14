@@ -397,21 +397,21 @@ function FilterControls({
         </div>
       </div>
 
-      {/* Level Filter */}
+      {/* Level Filter - Updated for mobile responsiveness */}
       <div>
         <h4
           className={`text-lg font-semibold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
         >
           Filter by Skill Level
         </h4>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {levels.map((level) => (
             <motion.button
               key={level}
               onClick={() => setActiveLevel(level)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeLevel === level
                   ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg"
                   : isDark
@@ -436,11 +436,9 @@ function ExperienceTimeline({
 }) {
   return (
     <motion.div layout className="relative mb-16">
-      {/* Timeline Line */}
-      <div
-        className={`absolute left-8 top-0 bottom-0 w-0.5 ${
-          isDark ? "bg-white/20" : "bg-gray-300"
-        }`}
+      {/* Timeline Line - Made responsive with media queries */}
+      <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 md:left-4 lg:left-8" 
+        style={{ backgroundColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)' }} 
       />
 
       <AnimatePresence>
@@ -461,7 +459,7 @@ function ExperienceTimeline({
 
 function ExperienceCard({ experience, index, isDark, isSelected, onSelect }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
 
   const levelColors = {
     Basic: "from-green-400 to-green-600",
@@ -477,43 +475,44 @@ function ExperienceCard({ experience, index, isDark, isSelected, onSelect }) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      className="relative pl-20 pb-12 group"
+      className="relative pl-12 md:pl-20 pb-8 md:pb-12 group"
     >
-      {/* Timeline Node */}
+      {/* Timeline Node - Made responsive */}
       <motion.div
         initial={{ scale: 0 }}
         animate={isInView ? { scale: 1 } : { scale: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-        className={`absolute left-6 w-4 h-4 rounded-full bg-gradient-to-r ${experience.color} shadow-lg`}
+        className={`absolute left-4 md:left-6 w-3 h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-r ${experience.color} shadow-lg`}
       />
 
-      {/* Experience Card */}
+      {/* Experience Card - Made responsive */}
       <motion.div
-        whileHover={{ scale: 1.02, x: 10 }}
+        whileHover={{ scale: 1.02, x: 5 }}
+        whileTap={{ scale: 0.98 }}
         onClick={() => onSelect(isSelected ? null : experience.id)}
-        className={`cursor-pointer rounded-2xl p-6 transition-all duration-300 ${
+        className={`cursor-pointer rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300 ${
           isDark
             ? "bg-white/5 border border-white/10 hover:bg-white/10"
             : "bg-white border border-gray-200 hover:shadow-lg"
         } backdrop-blur-sm group-hover:border-purple-300`}
       >
-        {/* Card Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-4">
+        {/* Card Header - Made responsive */}
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3 md:mb-4">
+          <div className="flex items-center space-x-3 md:space-x-4">
             <div
-              className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${experience.color} flex items-center justify-center text-white text-xl shadow-lg`}
+              className={`w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gradient-to-br ${experience.color} flex items-center justify-center text-white text-lg md:text-xl shadow-lg`}
             >
               {experience.icon}
             </div>
             <div>
               <h3
-                className={`text-xl font-bold ${isDark ? "text-white" : "text-gray-900"}`}
+                className={`text-lg md:text-xl font-bold ${isDark ? "text-white" : "text-gray-900"}`}
               >
                 {experience.heading}
               </h3>
-              <div className="flex items-center space-x-2 mt-1">
+              <div className="flex flex-wrap items-center gap-1 md:gap-2 mt-1">
                 <span
-                  className={`text-sm px-2 py-1 rounded-full ${
+                  className={`text-xs md:text-sm px-2 py-1 rounded-full ${
                     isDark
                       ? "bg-white/10 text-white"
                       : "bg-gray-100 text-gray-700"
@@ -530,7 +529,7 @@ function ExperienceCard({ experience, index, isDark, isSelected, onSelect }) {
             </div>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-between sm:justify-end space-x-2">
             <div
               className={`flex items-center space-x-1 px-2 py-1 rounded-full ${
                 isDark ? "bg-white/10" : "bg-gray-100"
@@ -554,14 +553,14 @@ function ExperienceCard({ experience, index, isDark, isSelected, onSelect }) {
           </div>
         </div>
 
-        {/* Description */}
+        {/* Description - Made responsive */}
         <p
-          className={`mb-4 leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
+          className={`mb-3 md:mb-4 text-sm md:text-base leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
         >
           {experience.details}
         </p>
 
-        {/* Skills Tags */}
+        {/* Skills Tags - Made responsive */}
         <motion.div
           initial={{ height: 0, opacity: 0 }}
           animate={
@@ -572,7 +571,7 @@ function ExperienceCard({ experience, index, isDark, isSelected, onSelect }) {
           transition={{ duration: 0.3 }}
           className="overflow-hidden"
         >
-          <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200/20">
+          <div className="flex flex-wrap gap-1 md:gap-2 pt-3 md:pt-4 border-t border-gray-200/20">
             {experience.skills.map((skill, i) => (
               <motion.span
                 key={i}
@@ -583,7 +582,7 @@ function ExperienceCard({ experience, index, isDark, isSelected, onSelect }) {
                     : { opacity: 0, scale: 0.8 }
                 }
                 transition={{ duration: 0.2, delay: i * 0.1 }}
-                className={`px-3 py-1 rounded-full text-xs font-medium ${
+                className={`px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium ${
                   isDark
                     ? "bg-white/10 text-white"
                     : "bg-gray-100 text-gray-700"
@@ -598,7 +597,6 @@ function ExperienceCard({ experience, index, isDark, isSelected, onSelect }) {
     </motion.div>
   );
 }
-
 function TechnologiesMastery({ experiences, isDark }) {
   const techData = experiences.map((exp) => ({
     name: exp.heading.split(" ")[0],
