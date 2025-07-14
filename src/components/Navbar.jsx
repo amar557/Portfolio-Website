@@ -276,7 +276,7 @@ function MobileNavigation({ isOpen, LinksData, handleNavbar, Isdark }) {
           </div>
 
           {/* Footer */}
-          <div className="absolute bottom-6 left-6 right-6">
+          <div className="absolute bottom-6 left-6 right-6 md:block hidden">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

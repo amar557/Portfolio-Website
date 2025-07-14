@@ -52,7 +52,7 @@ function Hero() {
   }, []);
 
   return (
-    <div className={`relative min-h-screen overflow-hidden ${Isdark ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'}`} id="hero">
+    <div className={`relative min-h-screen pt-20 md:pt-0 overflow-hidden ${Isdark ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'}`} id="hero">
       
       {/* Animated Background Elements */}
       <BackgroundElements Isdark={Isdark} />
@@ -224,6 +224,7 @@ function Description({ Isdark }) {
   );
 }
 
+
 function ActionButtons({ Isdark }) {
   return (
     <motion.div
@@ -232,7 +233,11 @@ function ActionButtons({ Isdark }) {
       transition={{ delay: 0.7 }}
       className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
     >
-      <motion.button
+      {/* Work Together Button (WhatsApp link) */}
+      <motion.a
+        href="https://wa.me/923336033081"
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25"
@@ -245,24 +250,26 @@ function ActionButtons({ Isdark }) {
           className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           initial={false}
         />
-      </motion.button>
-      
-      <motion.button
+      </motion.a>
+
+      {/* Download CV Button */}
+      <motion.a
+        href="/React_Native_cv.pdf"
+        download
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={`group flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-300 ${
-          Isdark 
-            ? 'border-white/20 text-white hover:bg-white/10' 
-            : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+          Isdark
+            ? "border-white/20 text-white hover:bg-white/10"
+            : "border-gray-300 text-gray-700 hover:bg-gray-50"
         }`}
       >
         <FaDownload className="transition-transform group-hover:translate-y-1" />
         Download CV
-      </motion.button>
+      </motion.a>
     </motion.div>
   );
 }
-
 function HeroVisual({ Isdark }) {
   return (
     <div className="relative flex justify-center">
@@ -307,7 +314,7 @@ function TechIcons({ Isdark }) {
   const techStack = ['React', 'Node', 'MongoDB', 'Express'];
   
   return (
-    <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute md:inset-0 inset-5 pointer-events-none">
       {techStack.map((tech, index) => (
         <motion.div
           key={tech}
@@ -336,7 +343,7 @@ function SocialLinks({ Isdark }) {
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.8 }}
-      className="fixed right-8 top-1/2 transform -translate-y-1/2 z-20"
+      className="fixed md:right-8 right-4 top-1/2  transform -translate-y-1/2 z-20"
     >
       <div className="flex flex-col gap-4">
         <div className={`w-1 h-20 rounded-full bg-gradient-to-b from-blue-600 to-purple-600 mx-auto mb-4`}></div>
