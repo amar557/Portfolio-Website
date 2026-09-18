@@ -231,7 +231,7 @@ function ActionButtons({ Isdark }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.7 }}
-      className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+      className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
     >
       {/* Work Together Button (WhatsApp link) */}
       <motion.a
@@ -273,64 +273,66 @@ function ActionButtons({ Isdark }) {
 function HeroVisual({ Isdark }) {
   return (
     <div className="relative flex justify-center">
-      {/* Main Circle */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="relative"
-      >
-        <div className={`w-80 h-80 rounded-full border-4 ${
-          Isdark ? 'border-blue-500/30' : 'border-purple-500/30'
-        } relative overflow-hidden`}>
-          
-          {/* Avatar/Image placeholder */}
-          <div className={`absolute inset-4 rounded-full ${
-            Isdark ? 'bg-gradient-to-br from-blue-900 to-purple-900' : 'bg-gradient-to-br from-blue-100 to-purple-100'
-          } flex items-center justify-center`}>
-            <FaCode className={`text-6xl ${Isdark ? 'text-blue-400' : 'text-purple-600'}`} />
+      <div className="relative h-80 w-80">
+        {/* Main Circle */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="relative h-full w-full"
+        >
+          <div className={`h-full w-full rounded-full border-4 ${
+            Isdark ? 'border-blue-500/30' : 'border-purple-500/30'
+          } relative overflow-hidden`}>
+            
+            {/* Avatar/Image placeholder */}
+            <div className={`absolute inset-4 rounded-full ${
+              Isdark ? 'bg-gradient-to-br from-blue-900 to-purple-900' : 'bg-gradient-to-br from-blue-100 to-purple-100'
+            } flex items-center justify-center`}>
+              <FaCode className={`text-6xl ${Isdark ? 'text-blue-400' : 'text-purple-600'}`} />
+            </div>
+            
+            {/* Orbiting Elements */}
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0"
+            >
+              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"></div>
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg"></div>
+              <div className="absolute top-1/2 right-4 transform -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-green-500 to-blue-500 rounded-full shadow-lg"></div>
+              <div className="absolute top-1/2 left-4 transform -translate-y-1/2 w-5 h-5 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full shadow-lg"></div>
+            </motion.div>
           </div>
-          
-          {/* Orbiting Elements */}
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0"
-          >
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"></div>
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg"></div>
-            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-green-500 to-blue-500 rounded-full shadow-lg"></div>
-            <div className="absolute top-1/2 left-4 transform -translate-y-1/2 w-5 h-5 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full shadow-lg"></div>
-          </motion.div>
-        </div>
-      </motion.div>
-      
-      {/* Floating Tech Icons */}
-      <TechIcons Isdark={Isdark} />
+        </motion.div>
+        
+        {/* Floating Tech Icons */}
+        <TechIcons Isdark={Isdark} />
+      </div>
     </div>
   );
 }
 
 function TechIcons({ Isdark }) {
-  const techStack = ['React', 'Node', 'MongoDB', 'Express'];
+  const techStack = [
+    { name: "React", className: "top-6 right-4" },
+    { name: "Node", className: "top-[26%] -left-8" },
+    { name: "MongoDB", className: "bottom-[26%] -right-12" },
+    { name: "Express", className: "bottom-6 -left-0" },
+  ];
   
   return (
-    <div className="absolute md:inset-0 inset-5 pointer-events-none">
+    <div className="pointer-events-none absolute inset-0 z-10">
       {techStack.map((tech, index) => (
         <motion.div
-          key={tech}
+          key={tech.name}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1 + index * 0.2 }}
-          className={`absolute text-sm font-semibold px-3 py-1 rounded-full ${
+          className={`absolute text-sm font-semibold px-3 py-1 rounded-full ${tech.className} ${
             Isdark ? 'bg-white/10 text-white' : 'bg-white/80 text-gray-800'
           } backdrop-blur-sm shadow-lg`}
-          style={{
-            top: `${20 + index * 15}%`,
-            right: index % 2 === 0 ? '-10%' : 'auto',
-            left: index % 2 === 1 ? '-10%' : 'auto',
-          }}
         >
-          {tech}
+          {tech.name}
         </motion.div>
       ))}
     </div>

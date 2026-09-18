@@ -1,3 +1,25 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+.pnp.cjs
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn-integrity
+
+# Build
+dist
+dist-ssr
+build
+out
+.vite
+.turbo
+*.local
+
 # Logs
 logs
 *.log
@@ -7,18 +29,45 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Environment
+.env
+.env.*
+!.env.example
 
-# Editor directories and files
+# Tests and coverage
+coverage
+.nyc_output
+*.lcov
+
+# Caches
+.cache
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Misc
+*.pem
+*.tgz
+.vercel
+.netlify
+.firebase
